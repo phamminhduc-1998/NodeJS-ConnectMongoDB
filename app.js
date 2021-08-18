@@ -5,7 +5,7 @@ const server = http.createServer(function (req, res) {
     res.writeHead(200, { "Content-Type": "text/html" });
     // res.write("Hello World");
     // res.end();
-
+    
 
     // Xu ly voi mongoDB
     const MongoClient = require('mongodb').MongoClient;
