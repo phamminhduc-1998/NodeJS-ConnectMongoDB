@@ -1,11 +1,11 @@
 const http = require("http");
-const host = "localhost";
-const port = "3000";
+var express = require('express');
+var app = express();
 const server = http.createServer(function (req, res) {
     res.writeHead(200, { "Content-Type": "text/html" });
     // res.write("Hello World");
     // res.end();
-    
+
 
     // Xu ly voi mongoDB
     const MongoClient = require('mongodb').MongoClient;
@@ -29,8 +29,14 @@ const server = http.createServer(function (req, res) {
         });
     });
 
+    
+    app.get('/GetJson',function(req,res){
+        res.send(kq);
+        res.end();
+    })
+
 });
-server.listen(port, host);
+server.listen(process.env.PORT || '3000');
 
 
 
